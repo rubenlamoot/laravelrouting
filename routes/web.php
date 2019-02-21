@@ -12,5 +12,30 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+
+/** gewone route */
+
+Route::get('/contact', function (){
+    return view('contact');
+});
+
+Route::get('/about', function (){
+    return view('about');
+});
+
+Route::get('/onzefotos', function (){
+    return view('photos.index');
+});
+
+
+/** gewone route met variabelen */
+
+Route::get('/post/{id}/{name}', function ($id,$name){
+   return "Dit is post nummer " .$id. " " .$name;
+});
+
+/** route resource */
+Route::resource('/posts', 'Postcontroller');
+
